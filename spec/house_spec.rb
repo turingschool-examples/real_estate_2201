@@ -1,7 +1,7 @@
 require './lib/room'
 require './lib/house'
 
-Rspec.describe House do
+RSpec.describe House do
   describe 'initialize' do
     it 'exists' do
       house = House.new("$400000", "123 sugar lane")
