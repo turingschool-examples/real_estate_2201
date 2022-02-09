@@ -27,4 +27,12 @@ class House
     end
     rfc
   end
+
+  def area
+    sqf = 0
+    @rooms.each do |room|
+      sqf += room.area
+    end
+    sqf 
+  end
 end
