@@ -5,19 +5,19 @@ require "pry"
 
 describe House do
   it "exists" do
-    house = House.new("$400000", "123 Sugar Lane")
+    house = House.new("400000", "123 Sugar Lane")
     expect(house).to be_an_instance_of(House)
   end
 
   it "has attributes" do
-    house = House.new("$400000", "123 Sugar Lane")
-    expect(house.price).to eq("$400000")
+    house = House.new("400000", "123 Sugar Lane")
+    expect(house.price).to eq("400000")
     expect(house.address).to eq("123 Sugar Lane")
     expect(house.rooms).to eq([])
   end
 
   it "has rooms" do
-    house = House.new("$400000", "123 Sugar Lane")
+    house = House.new("400000", "123 Sugar Lane")
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
     house.add_room(room_1)
@@ -26,12 +26,12 @@ describe House do
   end
 
   it "is affordable" do
-    house = House.new("$400000", "123 Sugar Lane")
+    house = House.new("400000", "123 Sugar Lane")
     expect(house.above_market_average).to eq(false)
   end
 
   it "can be organized" do
-    house = House.new("$400000", "123 Sugar Lane")
+    house = House.new("400000", "123 Sugar Lane")
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
     room_3 = Room.new(:living_room, 25, "15")
@@ -46,7 +46,7 @@ describe House do
   end
 
   it "can be listed" do
-    house = House.new("$400000", "123 Sugar Lane")
+    house = House.new("400000", "123 Sugar Lane")
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
     room_3 = Room.new(:living_room, 25, "15")
@@ -55,6 +55,7 @@ describe House do
     house.add_room(room_2)
     house.add_room(room_3)
     house.add_room(room_4)
-    expect(house.area).to eq(1900) 
+    expect(house.area).to eq(1900)
+    expect(house.details).to eq({"price" => 400000, "address" => "123 Sugar Lane"})
   end
 end

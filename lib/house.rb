@@ -2,7 +2,7 @@ require "./room"
 require "pry"
 
 class House
-attr_reader :price, :address, :rooms, :organize, :total_area
+attr_reader :price, :address, :rooms, :organize, :total_area, :details
 
   def initialize(price, address)
     @price = price
@@ -10,6 +10,7 @@ attr_reader :price, :address, :rooms, :organize, :total_area
     @rooms = []
     @organize = []
     @total_area = 0
+    @details = {"price" => price.to_i, "address" => address}
   end
 
   def add_room(room)
@@ -43,4 +44,5 @@ attr_reader :price, :address, :rooms, :organize, :total_area
     end
     return @total_area
   end
+
 end
