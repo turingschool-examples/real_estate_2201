@@ -9,4 +9,9 @@ class Room
   def category
     @room_name
   end
+
+  def area
+    room_area = @room_width.to_i * @room_length
+    return room_area
+  end
 end
