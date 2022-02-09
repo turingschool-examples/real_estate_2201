@@ -48,8 +48,13 @@ RSpec.describe House do
       room_3 = Room.new(:living_room, 25, '15')
       room_4 = Room.new(:basement, 30, '41')
 
-      expect(house.rooms_from_category(:bedroom)).to eq([room_1, room_2, room_4])
-      expect(house.rooms_from_category(:basement)).to eq([room3])
+      house.add_room(room_1)
+      house.add_room(room_2)
+      house.add_room(room_3)
+      house.add_room(room_4)
+
+      expect(house.rooms_from_category(:bedroom)).to eq([room_1, room_2])
+      expect(house.rooms_from_category(:basement)).to eq([room_4])
     end
   end
 

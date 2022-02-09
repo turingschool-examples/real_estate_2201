@@ -22,5 +22,14 @@ class House
       return false
     end
   end
-  
+
+  def rooms_from_category(category)
+    selected_rooms = []
+      @rooms.each do |room|
+        selected_rooms << room if room.category == category
+      end
+    return selected_rooms
+  end
 end
+
+# binding.pry
