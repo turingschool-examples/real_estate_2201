@@ -46,5 +46,8 @@ class House
       end
       return basements
     end
+
+    def area
+      @rooms
   end
 end
