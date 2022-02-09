@@ -73,6 +73,16 @@ class House
     end
   end
 
-  
+  def rooms_by_category
+    room_categories = {
+      :bedroom => [],
+      :basement => [],
+      :living_room => [],
+    }
+    @rooms.each do |index|
+      room_categories[index.category] << index
+    end
+    return room_categories
+  end
 
 end

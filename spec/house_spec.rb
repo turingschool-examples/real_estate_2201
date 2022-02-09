@@ -64,7 +64,7 @@ RSpec.describe House do
         expect(house.price_per_square_foot).to eq(210.53)
       end
 
-      xit 'can sort rooms by area' do
+      it 'can sort rooms by area' do
         house = House.new("$400000", "123 sugar lane")
         room_1 = Room.new(:bedroom, 10, '13')
         room_2 = Room.new(:bedroom, 11, '15')
@@ -78,7 +78,7 @@ RSpec.describe House do
         expect(house.rooms_sorted_by_area).to eq([room_4, room_3, room_2, room_1])
       end
 
-      xit 'can list rooms by category' do
+      it 'can list rooms by category' do
         house = House.new("$400000", "123 sugar lane")
         room_1 = Room.new(:bedroom, 10, '13')
         room_2 = Room.new(:bedroom, 11, '15')
