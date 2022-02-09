@@ -18,5 +18,17 @@ RSpec.describe Room do
       expect(room1.area).to eq(130)
       expect(room2.area).to eq(180)
     end
+
+    it "starts with no paint" do
+      room1 = Room.new(:den, 12, '15')
+      expect(room1.is_painted?).to eq(false)
+    end
+
+    it "can be painted" do
+      room1 = Room.new(:bedroom, 13, 13)
+      expect(room1.is_painted?).to eq(false)
+      room1.paint
+      expect(room1.is_painted?).to eq(true)
+    end
   end
 end
