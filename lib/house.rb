@@ -30,4 +30,12 @@ class House
     return sub_array
   end
 
+  def area
+    total = 0
+    rooms.each do |room|
+      total += room.area
+    end
+    return total
+  end
+
 end
