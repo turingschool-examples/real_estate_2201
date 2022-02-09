@@ -5,4 +5,8 @@ class House
     @price = price
     @address = address
   end
+
+  def price
+    @price.delete_prefix("$").to_i
+  end
 end
