@@ -24,5 +24,13 @@ RSpec.describe Room do
 
       expect(room1.is_painted?).to be(false)
     end
+
+    it 'can paint a room' do
+      room1 = Room.new(:bedroom, 10, '13')
+      
+      expect(room1.is_painted?).to be(false)
+      room1.paint
+      expect(room1.is_painted?).to be(true)
+    end
   end
 end
