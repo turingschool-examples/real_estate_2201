@@ -14,4 +14,10 @@ RSpec.describe House do
     expect(house.price).to eq(400000)
     expect(house.address).to eq("123 sugar lane")
   end
+
+  it "has no rooms by default" do
+    house = House.new("$400000", "123 sugar lane")
+
+    expect(house.rooms).to eq([])
+  end
 end
