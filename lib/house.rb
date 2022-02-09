@@ -6,7 +6,7 @@ class House
   attr_accessor :rooms
 
   def initialize(price, address)
-    @price = price
+    @price = price.delete_prefix('$').to_i
     @address = address
     @rooms = []
   end
