@@ -19,8 +19,6 @@ RSpec.describe Room do
       expect(room2.area).to eq(180)
     end
 
-
-
     it 'can return painted boolean' do
       room = Room.new(:bedroom, 10, '13')
       room1 = Room.new(:bedroom, 10, '13')

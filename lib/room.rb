@@ -16,7 +16,7 @@ class Room
     @paint
   end
 
-    def paint
-      @paint = true
-    end
+  def paint
+    @paint = true
+  end
 end
