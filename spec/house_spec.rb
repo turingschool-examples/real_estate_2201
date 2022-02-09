@@ -49,7 +49,7 @@ RSpec.describe House do
       expect(house.rooms_from_category(:basement)).to eq([room_4])
     end
 
-    xit 'can return the area of the entire house' do
+    it 'can return the area of the entire house' do
       house = House.new("$400000", "123 sugar lane")
       room_1 = Room.new(:bedroom, 10, '13')
       room_2 = Room.new(:bedroom, 11, '15')
@@ -63,7 +63,7 @@ RSpec.describe House do
       expect(house.area).to eq(1900)
     end
 
-    xit 'can return basic details as a hash' do
+    it 'can return basic details as a hash' do
       house = House.new("$400000", "123 sugar lane")
       room_1 = Room.new(:bedroom, 10, '13')
       room_2 = Room.new(:bedroom, 11, '15')
@@ -76,6 +76,49 @@ RSpec.describe House do
 
       expect(house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
     end
+  end
 
+  context 'Iteration 4' do
+    it 'can calculate and return price per square foot' do
+      house = House.new("$400000", "123 sugar lane")
+      room_1 = Room.new(:bedroom, 10, '13')
+      room_2 = Room.new(:bedroom, 11, '15')
+      room_3 = Room.new(:living_room, 25, '15')
+      room_4 = Room.new(:basement, 30, '41')
+      house.add_room(room_1)
+      house.add_room(room_2)
+      house.add_room(room_3)
+      house.add_room(room_4)
+
+      expect(house.price_per_square_foot).to eq (210.53)
+    end
+
+    it 'can return rooms in an array sorted largest to smallest' do
+      house = House.new("$400000", "123 sugar lane")
+      room_1 = Room.new(:bedroom, 10, '13')
+      room_2 = Room.new(:bedroom, 11, '15')
+      room_3 = Room.new(:living_room, 25, '15')
+      room_4 = Room.new(:basement, 30, '41')
+      house.add_room(room_1)
+      house.add_room(room_2)
+      house.add_room(room_3)
+      house.add_room(room_4)
+
+      expect(house.rooms_sorted_by_area).to eq([room_4, room_3, room_2, room_1])
+    end
+
+    it 'can return a hash with room type keys matched to corrisponding arrays of rooms' do
+      house = House.new("$400000", "123 sugar lane")
+      room_1 = Room.new(:bedroom, 10, '13')
+      room_2 = Room.new(:bedroom, 11, '15')
+      room_3 = Room.new(:living_room, 25, '15')
+      room_4 = Room.new(:basement, 30, '41')
+      house.add_room(room_1)
+      house.add_room(room_2)
+      house.add_room(room_3)
+      house.add_room(room_4)
+
+      expect(house.rooms_by_category).to eq(:bedroom => [room_1, room_2], :living_room => [room_3], :baement => [room_4])
+    end
   end
 end
