@@ -63,4 +63,16 @@ class House
     price_per_area.round(2)
   end
 
+  def rooms_sorted_by_area
+    @rooms.each do |room|
+      @rooms.each do |comparison|
+        if room.area < comparison.area
+          @rooms = @rooms.insert(@rooms.index(comparison), @rooms.delete_at(@rooms.index(room)))
+        end
+      end
+    end
+  end
+
+  
+
 end
