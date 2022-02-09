@@ -18,4 +18,6 @@ class House
       return false
     end
   end
+
+  def rooms_from_category
 end
