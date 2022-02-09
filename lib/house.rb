@@ -22,4 +22,15 @@ class House
     end
     total_area
   end
+
+  def rooms_from_category(category)
+    rooms_in_category = []
+
+    rooms.each do |room|
+      if room.category == category
+        rooms_in_category << room
+      end
+    end
+    rooms_in_category
+  end
 end
