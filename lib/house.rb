@@ -34,4 +34,19 @@ attr_reader :price, :address, :rooms
 
   end
 
+  def area
+    total_area =  0
+    @rooms.each do |room|
+      total_area += room.area
+    end
+    total_area
+  end
+
+  def details
+    details_hash = {}
+    details_hash["price"] = @price
+    details_hash["address"] = @address
+    details_hash
+  end
+
 end
