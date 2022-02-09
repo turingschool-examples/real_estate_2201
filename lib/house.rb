@@ -65,4 +65,16 @@ class House
     end
     return sorted
   end
+
+  def rooms_by_category
+    rooms_sorted = {}
+    @rooms.each do |current_room|
+      if rooms_sorted[current_room.category == nil]
+        rooms_sorted[current_room.category] = [current_room]
+      else
+        rooms_sorted[current_room.category] << current_room
+      end
+    end
+    reutrn rooms_sorted
+  end
 end
