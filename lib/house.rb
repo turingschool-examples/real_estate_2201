@@ -33,7 +33,7 @@ class House
   end
 
   def area
-    room_1.area + room_2.area + room_3.area + room_4.area
+    @rooms.area.sum
   end
 
   def details
