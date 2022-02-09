@@ -1,6 +1,7 @@
 require "./lib/room"
 require "./lib/house"
 require "rspec"
+require "pry"
 
 describe House do
   it "exists" do
@@ -39,6 +40,8 @@ describe House do
     house.add_room(room_2)
     house.add_room(room_3)
     house.add_room(room_4)
+    binding.pry
     expect(house.rooms_from_category(:bedroom)).to eq([room_1, room_2])
+    expect(house.rooms_from_category(:basement)).to eq([room_4])
   end
 end

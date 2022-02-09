@@ -1,7 +1,8 @@
 require "./room"
+require "pry"
 
 class House
-attr_reader :price, :address, :rooms
+attr_reader :price, :address, :rooms, :organize
 
   def initialize(price, address)
     @price = price
@@ -23,6 +24,9 @@ attr_reader :price, :address, :rooms
   end
 
   def rooms_from_category(gory)
+    until @organize == [] do
+      @organize.shift
+    end
     @rooms.each do |cat|
       if gory == cat.category
         @organize << cat
@@ -30,7 +34,6 @@ attr_reader :price, :address, :rooms
       end
     end
     return @organize
-    @organize = []
   end
 
 end
