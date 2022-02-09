@@ -30,6 +30,7 @@ class House
       end
     return selected_rooms
   end
+  
 end
 
 # binding.pry
