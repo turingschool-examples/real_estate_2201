@@ -18,5 +18,16 @@ RSpec.describe Room do
       expect(room1.area).to eq(130)
       expect(room2.area).to eq(180)
     end
+
+    it "has paint status" do
+      room1 = Room.new(:bedroom, 10, '13')
+      expect(room1.paint_status).to eq(false)
+    end
+
+    it "can be painted" do
+      room1 = Room.new(:bedroom, 10, '13')
+      room1.paint
+      expect(room1.paint_status).to eq(false)
+    end
   end
 end
