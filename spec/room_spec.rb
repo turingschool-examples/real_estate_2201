@@ -22,15 +22,8 @@ RSpec.describe Room do
     it "room is painted is false" do
       room = Room.new(:bedroom, 10, '13')
       expect(room.is_painted?).to eq(false)
+      room.paint
+      expect(room.is_painted?).to eq(true)
     end
-
-
-
-
-
-
-
-
-
   end
 end
