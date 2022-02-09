@@ -46,6 +46,7 @@ class House
       end
       return basements
     end
+  end
 
     def area
       room_areas = []
@@ -59,6 +60,7 @@ class House
       house_details = {}
       house_details['price'] = @price
       house_details['address'] = @address
+      house_details
     end
-  end
+
 end

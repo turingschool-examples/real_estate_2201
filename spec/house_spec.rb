@@ -1,3 +1,4 @@
+require 'pry'
 require './lib/room.rb'
 require './lib/house.rb'
 
@@ -76,7 +77,7 @@ RSpec.describe House do
       house.add_room(room_2)
       house.add_room(room_3)
       house.add_room(room_4)
-      expect(house.details).to include(price, address)
+      expect(house.details).to eq({'price' => 400000, 'address' => '123 sugar lane'})
     end
   end
 end
