@@ -1,9 +1,12 @@
 class House
-  attr_reader :price, :address, :rooms
+  attr_reader :price, :address, :rooms, :details
   def initialize(price, address)
     @price = Monetize.parse(price).to_i
     @address = address
     @rooms = []
+    @details = {"price" => @price,
+                "address" => @address.to_s
+              }
   end
 
   def add_room(room)
@@ -33,6 +36,6 @@ class House
     @rooms.each do |room|
       sqf += room.area
     end
-    sqf 
+    sqf
   end
 end
