@@ -46,4 +46,9 @@ class House
       end
     (price.to_f / total_area.to_f).to_f.round(2)
   end
+
+  def rooms_sorted_by_area
+    sorted_rooms = @rooms.sort_by { |room| room.area }
+    sorted_rooms.reverse
+  end
 end
