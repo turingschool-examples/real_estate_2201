@@ -7,7 +7,7 @@ class Room
     @height = height
   end
 
-  def area
+  def find_area
     length * height.to_i
   end
 

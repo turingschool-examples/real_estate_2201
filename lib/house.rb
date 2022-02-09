@@ -2,13 +2,14 @@ require "./room"
 require "pry"
 
 class House
-attr_reader :price, :address, :rooms, :organize
+attr_reader :price, :address, :rooms, :organize, :total_area
 
   def initialize(price, address)
     @price = price
     @address = address
     @rooms = []
     @organize = []
+    @total_area = 0
   end
 
   def add_room(room)
@@ -36,4 +37,10 @@ attr_reader :price, :address, :rooms, :organize
     return @organize
   end
 
+  def area
+    @rooms.each do |totes_area|
+      @total_area += totes_area.find_area
+    end
+    return @total_area
+  end
 end

@@ -15,8 +15,8 @@ RSpec.describe Room do
     it "can get area" do
       room1 = Room.new(:bedroom, 10, '13')
       room2 = Room.new(:living_room, 15, '12')
-      expect(room1.area).to eq(130)
-      expect(room2.area).to eq(180)
+      expect(room1.find_area).to eq(130)
+      expect(room2.find_area).to eq(180)
     end
   end
 end
