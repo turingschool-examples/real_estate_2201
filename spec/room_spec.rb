@@ -30,5 +30,8 @@ RSpec.describe Room do
       room1 = Room.new(:bedroom, 10, '13')
       room1.paint
       expect(room1.is_painted?).to eq(true)
+    end
+
+
   end
 end
