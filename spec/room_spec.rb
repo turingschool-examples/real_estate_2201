@@ -19,7 +19,7 @@ RSpec.describe Room do
       expect(room2.area).to eq(180)
     end
 
-    xit "can check for paint" do
+    it "can check for paint" do
       room1 = Room.new(:bedroom, 10, '13')
       expect(room1.is_painted?).to eq(false)
 
