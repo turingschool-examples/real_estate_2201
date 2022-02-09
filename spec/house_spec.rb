@@ -1,12 +1,12 @@
-require 'rspec'
 require './lib/house'
 require './lib/room'
+require 'rspec'
 
-Rspec.describe House do
-  context "ITeration 2" do
+RSpec.describe House do
+  context "Iteration 2" do
     it 'can create a house' do
       house = House.new("$400000", "123 sugar lane")
-      expect(house.price).to eq(40000)
+      expect(house.price).to eq(400000)
       expect(house.address).to eq("123 sugar lane")
       expect(house.rooms).to eq([])
     end
@@ -18,7 +18,7 @@ Rspec.describe House do
 
       house.add_room(room_1)
       house.add_room(room_2)
-      expect(house.rooms).to eq([room1, room2])
+      expect(house.rooms).to eq([room_1, room_2])
     end
   end
 end
