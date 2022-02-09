@@ -23,4 +23,10 @@ describe House do
     house.add_room(room_2)
     expect(house.rooms).to eq([room_1, room_2])
   end
+
+  it "is affordable" do
+    house = House.new("$400000", "123 Sugar Lane")
+    expect(house.above_market_average).to eq(false)
+
+  end
 end
