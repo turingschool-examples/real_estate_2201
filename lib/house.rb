@@ -7,5 +7,7 @@ class House
     @rooms = []
   end
 
-  
+  def add_room(room_num)
+    @rooms << (room_num)
+  end
 end
