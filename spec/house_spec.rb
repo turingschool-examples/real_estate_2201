@@ -59,4 +59,12 @@ describe House do
     expect(house.rooms_from_category(:bedroom)).to eq([room_1, room_2])
     expect(house.rooms_from_category(:basement)).to eq([room_4])
   end
+
+  it 'has a hash of details'do
+    house = House.new("$400000", "123 sugar lane")
+    
+    expect(house.details["price"]).to eq(400000)
+    expect(house.details["address"]).to eq("123 sugar lane")
+  end
+
 end

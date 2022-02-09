@@ -33,4 +33,11 @@ class House
     end
     rooms_in_category
   end
+
+  def details
+    details = Hash.new
+    details["price"] = @price[1..-1].to_i
+    details["address"] = @address
+    details
+  end
 end
