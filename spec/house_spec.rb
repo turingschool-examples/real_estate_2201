@@ -72,4 +72,10 @@ RSpec.describe House do
 
     expect(house.area).to eq(1900)
   end
+
+  it "can return details about the house" do
+    house = House.new("$400000", "123 sugar lane")
+
+    expect(house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
+  end
 end
