@@ -61,4 +61,18 @@ class House
   def rooms_sorted_by_area
     @rooms.sort_by { |room| room.area }.reverse
   end
+
+  def rooms_by_category
+    rooms_by_category = Hash.new
+
+    @rooms.each do |room|
+      if room.category == :bedroom && rooms_by_category.has_key?(:bedroom)
+        rooms_by_category.values_at(:bedroom) << room
+      else
+      rooms_by_category[room.category] = [room]
+      end
+    end
+
+    rooms_by_category
+  end
 end
