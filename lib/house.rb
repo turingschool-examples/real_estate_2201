@@ -48,4 +48,24 @@ class House
     return float_price.round(2)
   end
 
+  def rooms_sorted_by_area
+    area_array = []
+    sorted_rooms = []
+    rooms.length.times {sorted_rooms.append(nil)}
+    rooms.each do |room|
+      area_array.append(room.area)
+    end
+    area_array = area_array.sort
+    rooms.each do |room|
+      room_index = -1
+      area_array.each do |area|
+        if room.area == area
+          room_index = area_array.find_index(area)
+        end
+      end
+      sorted_rooms[room_index] = room
+    end
+    return sorted_rooms
+  end 
+
 end
