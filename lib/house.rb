@@ -17,4 +17,14 @@ class House
       false
     end
   end
+
+  def rooms_from_category(category)
+    rfc = []
+    @rooms.each do |room|
+      if room.category == category
+        rfc << room
+      end
+    end
+    rfc
+  end
 end
