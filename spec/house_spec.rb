@@ -83,6 +83,7 @@ describe House do
       house.add_room(room_3)
       house.add_room(room_4)
       expect(house.rooms_sorted_by_area).to eq([room_4, room_3, room_2, room_1])
+      expect(house.room_by_category).to eq()
     end
 
 end
