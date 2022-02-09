@@ -39,7 +39,7 @@ RSpec.describe House do
       expect(house.above_market_average?).to eq(false)
     end
 
-    it 'can get list of rooms from category'
+    it 'can get list of rooms from category' do
       house = House.new('$400000', '123 sugar lane')
       room_1 = Room.new(:bedroom, 10, '13')
       room_2 = Room.new(:bedroom, 11, '15')
@@ -49,6 +49,7 @@ RSpec.describe House do
       house.add_room(room_2)
       house.add_room(room_3)
       house.add_room(room_4)
-      expect(house.rooms_from_category(:basement)).to include(room_1, room_2)
+      expect(house.rooms_from_category(:bedroom)).to include(room_1, room_2)
+    end
   end
 end

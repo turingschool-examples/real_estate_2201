@@ -19,5 +19,32 @@ class House
     end
   end
 
-  def rooms_from_category
+  def rooms_from_category(x)
+    bedrooms = []
+    living_rooms = []
+    basements = []
+
+    if x == :bedroom
+      @rooms.each do |room|
+        if room.category == :bedroom
+        bedrooms << room
+        end
+      end
+      return bedrooms
+    elsif x == :living_room
+      @rooms.each do |room|
+        if room.category == :living_room
+        living_rooms << room
+        end
+      end
+      return living_rooms
+    elsif x == :basement
+      @rooms.each do |room|
+        if room.category == :basement
+        basements << room
+        end
+      end
+      return basements
+    end
+  end
 end
