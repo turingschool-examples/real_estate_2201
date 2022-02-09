@@ -39,6 +39,10 @@ class House
     end
     return area
   end
+
+  def price_per_square_foot
+    return (price.to_f / area.to_f).round(2)
+  end
 end
 
 # binding.pry
