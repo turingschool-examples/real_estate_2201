@@ -9,4 +9,8 @@ class Room
   def area
     length.to_i * width
   end
+
+  def is_painted?
+    false
+  end
 end
