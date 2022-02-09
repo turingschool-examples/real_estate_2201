@@ -1,5 +1,5 @@
-require './lib/room'
-require './lib/house'
+require './lib/room.rb'
+require './lib/house.rb'
 require 'rspec'
 
 RSpec.describe House do
