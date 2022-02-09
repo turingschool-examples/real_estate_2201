@@ -51,4 +51,21 @@ class House
     sorted_rooms = @rooms.sort_by { |room| room.area }
     sorted_rooms.reverse
   end
+
+  def rooms_by_category
+    bedroom = []
+    living_room = []
+    basement = []
+    @rooms.each do |room|
+      if room.category == :bedroom
+        bedroom << room
+      elsif room.category == :living_room
+        living_room << room
+      elsif room.category == :basement
+        basement << room
+      end
+    end
+    rbc = {:bedroom => bedroom, :living_room => living_room, :basement => basement}
+    rbc
+  end
 end
