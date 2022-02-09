@@ -11,8 +11,10 @@ RSpec.describe House do
 
     it 'checks if above market average' do
       house = House.new("$400000", "123 Sugar Lane")
+      house_2 = House.new("$500001", "124 Sugar Lane")
 
       expect(house.above_market_average?).to eq(false)
+      expect(house_2.above_market_average?).to eq(true)
     end
 
     it 'can add rooms' do
