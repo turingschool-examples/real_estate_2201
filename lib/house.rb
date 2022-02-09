@@ -67,5 +67,22 @@ class House
     end
     return sorted_rooms
   end 
+  
+  def rooms_by_category
+    categories = []
+    rooms.each do |room|
+      if categories.include?(room.category) != true
+        categories.append(room.category)
+      end
+    end
+    hash = {}
+    categories.each do |category|
+      hash[category] = []
+    end
+    rooms.each do |room|
+      hash[room.category].append(room)
+    end
+    return hash
+  end
 
 end
