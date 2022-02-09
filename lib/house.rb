@@ -42,4 +42,10 @@ class House
     return {"price" => price, "address" => address}
   end
 
+  def price_per_square_foot
+    intable_price = price.sub("$", " ")
+    float_price = intable_price.to_f / self.area.to_f
+    return float_price.round(2)
+  end
+
 end
