@@ -19,7 +19,8 @@ class House
   end
 
   def rooms_from_category(category)
-    # @rooms.group_by {category}
+    @rooms.group_by {|category| :category}
+    
   end
 
   def area

@@ -49,7 +49,7 @@ RSpec.describe House do
     house.add_room(room_2)
     house.add_room(room_3)
     house.add_room(room_4)
-    binding.pry
+    # binding.pry
     expect(house.rooms_from_category(:basement).length).to eq(1)
   end
 
