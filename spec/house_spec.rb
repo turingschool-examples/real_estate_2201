@@ -107,7 +107,7 @@ RSpec.describe House do
       expect(house.rooms_sorted_by_area).to eq([room_4, room_3, room_2, room_1])
     end
 
-    it 'can return a hash with room type keys matched to corrisponding arrays of rooms' do
+    xit 'can return a hash with room type keys matched to corrisponding arrays of rooms' do
       house = House.new("$400000", "123 sugar lane")
       room_1 = Room.new(:bedroom, 10, '13')
       room_2 = Room.new(:bedroom, 11, '15')
