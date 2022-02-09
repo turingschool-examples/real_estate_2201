@@ -31,5 +31,11 @@ class House
     end
     area
   end
-  
+
+  def details
+    details = {}
+    details["price"] = @price
+    details["address"] = @address
+    return details
+  end
 end
