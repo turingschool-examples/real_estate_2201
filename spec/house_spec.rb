@@ -13,7 +13,7 @@ RSpec.describe House do
     end
 
     it 'has a price' do
-      
+
       expect(@house.price).to eq(400000)
     end
 
@@ -35,6 +35,45 @@ RSpec.describe House do
       expect(@house.rooms).to eq([room_1])
       @house.add_room(room_2)
       expect(@house.rooms).to eq([room_1, room_2])
+    end
+
+    it 'can determine if price is above average' do
+
+      expect(@house.above_market_average?).to eq(false)
+    end
+
+    it 'can find all rooms in a certain category' do
+      room_1 = Room.new(:bedroom, 10, '13')
+      room_2 = Room.new(:bedroom, 11, '15')
+      room_3 = Room.new(:living_room, 25, '15')
+      room_4 = Room.new(:basement, 30, '41')
+
+      @house.add_room(room_1)
+      @house.add_room(room_2)
+      @house.add_room(room_3)
+      @house.add_room(room_4)
+
+      expect(@house.rooms_from_category(:bedroom)).to eq([room_1, room_2])
+      expect(@house.rooms_from_category(:basement)).to eq([room_4])
+    end
+
+    it 'can calculate the total area of the house' do
+      room_1 = Room.new(:bedroom, 10, '13')
+      room_2 = Room.new(:bedroom, 11, '15')
+      room_3 = Room.new(:living_room, 25, '15')
+      room_4 = Room.new(:basement, 30, '41')
+
+      @house.add_room(room_1)
+      @house.add_room(room_2)
+      @house.add_room(room_3)
+      @house.add_room(room_4)
+
+      expect(@house.area).to eq(1900)
+    end
+
+    it 'has a hash called details' do
+
+      expect(@house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
     end
   end
 end
