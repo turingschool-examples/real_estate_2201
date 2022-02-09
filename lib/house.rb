@@ -47,4 +47,53 @@ class House
     details = {"price" => price_i, "address" => @address}
   end
 
+
+  def price_per_square_foot
+    unit_price = (price_i.to_f/house_area.to_f).round(2)
+  end
+
+  def rooms_sorted_by_area
+    areas = []
+    @rooms.each do |room|
+    areas << room.area
+    end
+    areas_s = areas.sort.reverse!
+    # binding.pry
+    sorted_rooms = []
+    areas_s.each do |area|
+      # binding.pry
+          @rooms.each do |room|
+        if room.area == area
+          sorted_rooms << room
+          # binding.pry
+        end
+      end
+    end
+    sorted_rooms
+  end
+
+  def rooms_by_category
+    rooms_by_cat = {}
+    bedroom = []
+    living_room = []
+    basement = []
+# binding.pry
+    @rooms.each do |room|
+      # binding.pry
+      if room.category == :bedroom
+        bedroom << room
+        rooms_by_cat[:bedroom] = bedroom
+      elsif room.category == :living_room
+        living_room << room
+        rooms_by_cat[:living_room] = living_room
+      elsif room.category == :basement
+        basement << room
+        rooms_by_cat[:basement] = basement
+      end
+    end
+      rooms_by_cat
+    # binding.pry
+  end
+
+
 end

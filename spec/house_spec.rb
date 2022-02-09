@@ -31,7 +31,10 @@ RSpec.describe House do
       house.add_room(room_2)
       expect(house.rooms).to eq([room_1, room_2])
     end
+  end
 
+
+context "Iteration 3" do
     it "checks whether above market average price" do
       expect(house.above_market_average?).to eq(false)
     end
@@ -60,8 +63,38 @@ RSpec.describe House do
       expect(house_new.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
     end
 
+  end
 
+  context "Iteration 4" do
 
+    it "calculates price per square foot" do
+      house_new = House.new("$400000", "123 sugar lane")
+      house_new.add_room(room_1)
+      house_new.add_room(room_2)
+      house_new.add_room(room_3)
+      house_new.add_room(room_4)
+      expect(house_new.price_per_square_foot).to eq(210.53)
+    end
+
+    it "sorts room by area in descending order" do
+      house_new = House.new("$400000", "123 sugar lane")
+      house_new.add_room(room_1)
+      house_new.add_room(room_2)
+      house_new.add_room(room_3)
+      house_new.add_room(room_4)
+
+      expect(house_new.rooms_sorted_by_area).to eq([room_4, room_3, room_2, room_1])
+    end
+
+    it "shows rooms by category" do
+      house_new = House.new("$400000", "123 sugar lane")
+      house_new.add_room(room_1)
+      house_new.add_room(room_2)
+      house_new.add_room(room_3)
+      house_new.add_room(room_4)
+
+      expect(house_new.rooms_by_category).to eq({:bedroom => [room_1, room_2], :living_room => [room_3], :basement =>[room_4]})
+    end
   end
 
 end
