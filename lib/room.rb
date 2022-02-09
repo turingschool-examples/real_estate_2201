@@ -5,4 +5,8 @@ class Room
     @length = length
     @category = category
   end
+
+  def area
+    @length * @width.to_i
+  end
 end
