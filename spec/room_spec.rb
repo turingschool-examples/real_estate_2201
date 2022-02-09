@@ -26,7 +26,6 @@ RSpec.describe Room do
     xit "knows if a room is painted"
     room1 = Room.new(:bedroom, 10, '13')
     room2 = Room.new(:living_room, 15, '12')
-    room1
     expect(room1.is_painted).to be_in(false)
   end
 end
