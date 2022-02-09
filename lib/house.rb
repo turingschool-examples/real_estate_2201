@@ -15,4 +15,19 @@ class House
       return false
     end
   end
+
+  def add_room(room)
+    rooms.append(room)
+  end
+
+  def rooms_from_category(category)
+    sub_array = []
+    rooms.each do |room|
+      if room.category == category 
+        sub_array.append(room)
+      end
+    end
+    return sub_array
+  end
+
 end
