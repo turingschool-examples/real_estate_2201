@@ -38,4 +38,8 @@ class House
     return total
   end
 
+  def details
+    return {"price" => price, "address" => address}
+  end
+
 end
