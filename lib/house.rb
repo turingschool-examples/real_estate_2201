@@ -22,4 +22,16 @@ attr_reader :price, :address, :rooms
     end
   end
 
+  def rooms_from_category(room_category)
+    room_type = []
+
+    @rooms.each do |room|
+      if room.category == room_category
+        room_type << room
+      end
+    end
+    room_type
+
+  end
+
 end
