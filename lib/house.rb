@@ -12,4 +12,8 @@ class House
     @price.delete("$").to_i
   end
 
+
+  def add_room(rooms)
+    @rooms << rooms
+  end
 end
