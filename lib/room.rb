@@ -11,10 +11,12 @@ class Room
   end
 
   def is_painted?
-    return false
+    false
   end
 
   def paint
-    @is_painted == true
+    if is_painted? == false
+      is_painted? true
+    end
   end
 end
