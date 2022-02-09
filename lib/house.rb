@@ -51,4 +51,11 @@ class House
     return total_area
   end
 
+  def details
+    details = {
+      "price" => price,
+      "address" => address,
+    }
+  end
+
 end

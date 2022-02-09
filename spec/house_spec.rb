@@ -27,7 +27,7 @@ RSpec.describe House do
         expect(house.above_market_average?).to eq(false)
       end
 
-      xit 'can display the behaviors of its rooms' do
+      it 'can display the attributes of its rooms' do
         house = House.new("$400000", "123 sugar lane")
         room_1 = Room.new(:bedroom, 10, '13')
         room_2 = Room.new(:bedroom, 11, '15')
@@ -43,7 +43,7 @@ RSpec.describe House do
         expect(house.area).to eq(1900)
       end
 
-      xit 'can display the details of the house' do
+      it 'can display the details of the house' do
         house = House.new("$400000", "123 sugar lane")
         expect(house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
       end
