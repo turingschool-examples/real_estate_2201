@@ -23,4 +23,13 @@ class House
     end
     output
   end
+
+  def area
+    area = 0
+    @rooms.each do |current_room|
+      area += current_room.area
+    end
+    area
+  end
+  
 end
