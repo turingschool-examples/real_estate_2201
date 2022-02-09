@@ -18,6 +18,12 @@ RSpec.describe House do
       expect(house.price).to eq(400000)
       expect(house.address).to eq("123 sugar lane")
     end
+
+    it "has details" do
+      house = House.new("$400000", "123 sugar lane")
+
+      expect(house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
+    end
   end
 
   describe 'add_room' do
