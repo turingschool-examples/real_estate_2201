@@ -25,12 +25,19 @@ class House
 
   def rooms_from_category(category)
     selected_rooms = []
-      @rooms.each do |room|
-        selected_rooms << room if room.category == category
-      end
+    @rooms.each do |room|
+      selected_rooms << room if room.category == category
+    end
     return selected_rooms
   end
-  
+
+  def area
+    area = 0
+    @rooms.each do |room|
+      area += room.area
+    end
+    return area
+  end
 end
 
 # binding.pry
