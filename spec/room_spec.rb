@@ -1,4 +1,4 @@
-require './lib/room'
+require './lib/room.rb'
 
 RSpec.describe Room do
   context "Iteration 1" do
@@ -7,7 +7,7 @@ RSpec.describe Room do
       expect(room).to be_an_instance_of(Room)
     end
 
-    xit "has a category" do
+    it "has a category" do
       room = Room.new(:bedroom, 10, '13')
       expect(room.category).to eq(:bedroom)
     end
