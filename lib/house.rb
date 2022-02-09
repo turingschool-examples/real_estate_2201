@@ -48,6 +48,17 @@ class House
     end
 
     def area
-      @rooms
+      room_areas = []
+      @rooms.each do |room|
+        room_areas << room.area
+      end
+      room_areas.sum
+    end
+
+    def details
+      house_details = {}
+      house_details['price'] = @price
+      house_details['address'] = @address
+    end
   end
 end
