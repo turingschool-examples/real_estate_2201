@@ -1,30 +1,27 @@
 require 'pry'
 require 'rspec'
-require './paint'
 
 class Room
-  attr_reader :category, :length, :width, :paint_status
+  attr_reader :category, :length, :width, :is_painted
   def initialize(category, length, width)
     @category = category
     @length = length
     @width = width
-    @paint_status = []
-
+    @is_painted = false
   end
 
   def area
-    (width.to_i) * length
+    width_integer = width.to_i
+    return width_integer * length
   end
-
-   def add_paint(paint)
-     @paint_status << paint
-   end
 
   def is_painted?
-    if @paint_status.empty?
-      return false
-    else
-      return true 
-    end
+    @is_painted
   end
+
+   def paint
+     @is_painted = true 
+   end
+
+
 end
